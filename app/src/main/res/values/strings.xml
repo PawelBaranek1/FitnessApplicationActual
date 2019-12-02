@@ -2,5 +2,5 @@
     <string name="app_name">Fitness Application1</string>
     <string name="welcome">Welcome, have you signed up with us already?</string>
     <string name="sign_in">Yes, let me sign in!</string>
-    <string name="sign_up">Yes, let me sign up!</string>
+    <string name="sign_up">No, let me sign up!</string>
 </resources>
