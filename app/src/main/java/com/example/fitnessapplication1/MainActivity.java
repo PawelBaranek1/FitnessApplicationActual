@@ -6,9 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public EditText emailId, password;
+    Button btnSignUp;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SignIn.class));
             }
         });
-//This piece of code means that when the user clicks on the sign in button it will take them to the sign in screen
+//This piece of code means that when the user clicks on the button it will take them to the
+//next activity where the sign in screen will be.
 
 
         Button signUpBtn = (Button) findViewById(R.id.sign_up_button1);
