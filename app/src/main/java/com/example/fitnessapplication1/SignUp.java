@@ -2,11 +2,13 @@ package com.example.fitnessapplication1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -33,8 +35,17 @@ public class SignUp extends AppCompatActivity {
             //the OnClickListener is now set
             @Override
             public void onClick(View view) {
-                validate();
+                if(validate()){
+                    //Upload to database
+                }
 
+            }
+        });
+
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUp.this, MainActivity.class));
             }
         });
     }
@@ -58,9 +69,14 @@ public class SignUp extends AppCompatActivity {
         //Result will be the variable that will be true/false
         String name = userName.getText().toString();
         String password = userPassword.getText().toString();
-        String emaail = userEmail.getText().toString();
-        //
-        if
-
+        String email = userEmail.getText().toString();
+        //Created variables which I will be testing for
+        if(name.isEmpty() && password.isEmpty()  && email.isEmpty()) {
+            Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
+            //displays an error toast if fields are empty
+        }else{
+            result = true;
+        }
+        return result;
     }
 }
