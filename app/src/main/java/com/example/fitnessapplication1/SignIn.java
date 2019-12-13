@@ -32,7 +32,8 @@ public class SignIn extends AppCompatActivity {
     private void Validate(String userName, String userPassword){
             //function to validate Name and password as the 2 parameters
         if((userName == "Admin") && (userPassword == "5678")){
-            Intent intent = new Intent(SignIn.this, )
+            Intent intent = new Intent(SignIn.this, MainScreen.class);
+
 
         }
     }
