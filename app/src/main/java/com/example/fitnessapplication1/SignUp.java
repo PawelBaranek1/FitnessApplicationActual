@@ -1,5 +1,6 @@
 package com.example.fitnessapplication1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUp extends AppCompatActivity {
@@ -25,11 +29,15 @@ public class SignUp extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up2);
         setupUIViews();
+
+        firebaseAuth = firebaseAuth.getInstance();
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             //the OnClickListener is now set
@@ -37,8 +45,25 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
                 if(validate()){
                     //Upload to database
-                }
+                    String  user_email = userEmail.getText().toString().trim();
+                    String user_password = userPassword.getText().toString().trim();
 
+                    firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(SignUp.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                //toast to signify completion
+                                startActivity(new Intent(SignUp.this , MainActivity.class   ));
+                                //starts main menu to let user sign in
+                            }else{
+                                Toast.makeText(SignUp.this, "Registration Unsuccessful", Toast.LENGTH_SHORT).show();
+                                //toast to show user registration failure.
+                            }
+
+                        }
+                    });
+                }
             }
         });
 
