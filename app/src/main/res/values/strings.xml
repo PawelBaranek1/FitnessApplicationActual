@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Fitness Application1</string>
+
     <string name="welcome">Welcome, have you signed up with us already?</string>
+
     <string name="sign_in">Yes, let me sign in!</string>
+
     <string name="sign_up">No, let me sign up!</string>
+
+    <string name="title_activity_temp">Temp</string>
+
+    <string-array name ="ageRange">
+        <item>15 - 29</item>
+        <item>30 - 44</item>
+        <item>45 - 59</item>
+        <item>59+</item>
+    </string-array>
+
 </resources>

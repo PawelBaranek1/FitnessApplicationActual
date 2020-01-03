@@ -47,14 +47,15 @@ public class SignIn extends AppCompatActivity {
             //only when username is "Admin" and password is "5678"
             Intent intent = new Intent(SignIn.this, MainScreen.class);
             startActivity(intent);
-            //move onto next activity
+            //start the next activity
         }else{
             counter++;
             //increment counter by 1
-            Info.setText("Number of incorrect attempts: " + counter);
+            Info.setText("Number of incorrect attempts: " + (counter));
             if(counter == 3) {
                 Login.setEnabled(false);
-                //when counter reaches 3 disable the button.
+                Info.setText("Access denied, too many failed attempts");
+                //when counter reaches 3 disable the button and display error message for user
             }
         }
     }

@@ -51,8 +51,8 @@
 
     <TextView
         android:id="@+id/tvUserLogIn"
-        android:layout_width="198dp"
-        android:layout_height="14dp"
+        android:layout_width="256dp"
+        android:layout_height="37dp"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
