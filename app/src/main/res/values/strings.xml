@@ -9,11 +9,40 @@
 
     <string name="title_activity_temp">Temp</string>
 
-    <string-array name ="ageRange">
-        <item>15 - 29</item>
-        <item>30 - 44</item>
-        <item>45 - 59</item>
+    <string name="line1">What is your target weight</string>
+    <string name="line2">gain/loss per month:</string>
+    <string name="sex">Sex:</string>
+    <string name="ageRange">Age Range:</string>
+    <string name="activityLevel">Current activity level</string>
+    <string name="weight">Weight(kg)</string>
+    <string name="height">Height(m)</string>
+
+
+    <string-array name="ageRange">
+        <item>15 – 29</item>
+        <item>30 – 44</item>
+        <item>45 – 59</item>
         <item>59+</item>
+    </string-array>
+
+    <string-array name="activityLevel">
+        <item>Sedentary</item>
+        <item>Moderate</item>
+        <item>Intensive</item>
+        <item>Extreme</item>
+    </string-array>
+
+    <string-array name="weightChange">
+        <item>0 – 0.5kg</item>
+        <item>0.6 – 1.0kg</item>
+        <item>1.1 – 1.5kg</item>
+        <item>1.6 – 2.0kg</item>
+        <item>2.1kg+</item>
+    </string-array>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
 
 </resources>

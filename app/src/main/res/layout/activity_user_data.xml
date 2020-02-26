@@ -6,30 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".UserData">
 
-    <EditText
-        android:id="@+id/editText"
+    <Spinner
+        android:id="@+id/spnrSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.351" />
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/tvAgeRange"
+        app:layout_constraintTop_toBottomOf="@+id/spnrAgeRange"
+        app:layout_constraintVertical_bias="0.388" />
 
-    <EditText
-        android:id="@+id/editText2"
+    <TextView
+        android:id="@+id/tvSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:text="Sex:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/spnrSex"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgeRange"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/weight"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etHeight" />
+
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="@string/height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +59,79 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toEndOf="@+id/tvActivityLevel"
+        app:layout_constraintTop_toBottomOf="@+id/spnrTargetWeight"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <Spinner
+        android:id="@+id/spnrActivityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/spnrTargetWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/tvTargetWeight2"
+        app:layout_constraintTop_toBottomOf="@+id/spnrAgeRange"
+        app:layout_constraintVertical_bias="0.509" />
+
+    <Spinner
+        android:id="@+id/spnrTargetWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/etWeight"
+        app:layout_constraintVertical_bias="0.293" />
+
+    <TextView
+        android:id="@+id/tvTargetWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/line1"
+        app:layout_constraintBottom_toTopOf="@+id/tvActivityLevel"
+        app:layout_constraintEnd_toStartOf="@+id/spnrTargetWeight"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etWeight"
+        app:layout_constraintVertical_bias="0.425" />
+
+    <TextView
+        android:id="@+id/tvTargetWeight2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/line2"
+        app:layout_constraintBottom_toTopOf="@+id/tvActivityLevel"
+        app:layout_constraintEnd_toStartOf="@+id/spnrTargetWeight"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTargetWeight"
+        app:layout_constraintVertical_bias="0.014" />
+
+    <TextView
+        android:id="@+id/tvActivityLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:text="What is your activity level?"
+        app:layout_constraintBottom_toTopOf="@+id/spnrAgeRange"
+        app:layout_constraintEnd_toStartOf="@+id/spnrActivityLevel"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnrTargetWeight"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvAgeRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Age Range"
+        app:layout_constraintEnd_toStartOf="@+id/spnrAgeRange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvActivityLevel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
